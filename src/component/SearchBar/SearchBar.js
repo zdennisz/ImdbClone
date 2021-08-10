@@ -39,7 +39,6 @@ const SearchBar = (props) => {
         const res = await SearchAccess(input.toString(), "auto-complete");
         setBtnStyle("btn btn_submit");
         props.setData(res.d);
-        props.setUpdate(true);
       } catch (err) {
         console.log(err);
       }
@@ -64,7 +63,7 @@ const SearchBar = (props) => {
           type="text"
           value={input}
           onChange={inputHandler}
-          placeholder="Search by anythng you want"
+          placeholder="Search by anything you want"
         ></input>
       </div>
 

@@ -1,25 +1,15 @@
 .search_results_container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  top: 47px;
+  left: 210px;
+  background-color: #1f1f1f;
 }
 
-.title_text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  background-color: #f5c518;
-  font-weight: bold;
-  font-size: large;
-  width: 66px;
-  height: 52px;
-  margin-left: 12px;
-  margin-right: 12px;
-  border-radius: 10px;
-}
 .header_cont {
   display: flex;
   flex-direction: row;

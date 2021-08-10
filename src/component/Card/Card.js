@@ -15,12 +15,11 @@ const Card = (props) => {
         />
       </div>
       <div className="content">
-        <label>Title</label>
-        <label>{data.l}</label>
-        <label>Starring</label>
-        <label>{data.s}</label>
-        <label>Year</label>
-        <label>{data.y}</label>
+        <label className="content_title">{data.l}</label>
+
+        <label className="content_sub_title">{data.y}</label>
+
+        <label className="content_sub_title">{data.s}</label>
       </div>
     </div>
   );
