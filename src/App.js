@@ -4,11 +4,6 @@ import SearchBar from "./component/SearchBar/SearchBar";
 import SignIn from "./component/SignIn/Signin";
 import Logo from "./component/Logo/Logo";
 export default function App() {
-  useEffect(() => {
-    //chek the date and send request
-    const date = Date();
-  }, []);
-
   return (
     <div className="App">
       <div className="header_cont">
