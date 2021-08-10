@@ -1,0 +1,33 @@
+.continer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: "100%";
+  margin: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  padding: 5px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.img_container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down;
+}
