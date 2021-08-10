@@ -7,8 +7,8 @@
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
-  border-width: 1px;
-  border-color: white;
+  border-width: 3px;
+  border-top-color: #2d2d2d;
   padding: 15px;
 }
 .content {
