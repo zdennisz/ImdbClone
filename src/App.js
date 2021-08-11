@@ -8,17 +8,22 @@ export default function App() {
   const [isLoggedIn, SetIsLoggedIn] = useState(false);
   const [userName, SetUserName] = useState();
 
-  const signInHandler = () => {};
+  const signInHandler = () => {
+    SetIsLoggedIn(true)
+  };
+  const returnToMainHandler = () => {
+    SetIsLoggedIn(false)
+  }
 
   return (
     <div className="App">
       <div className="header_cont">
-        <Logo title="IMDb" />
+        <Logo title="IMDb" handler={returnToMainHandler} />
         <SearchBar />
         <div className="vertical_line"></div>
         <SignIn signInHandler={signInHandler} userName={userName} />
       </div>
-      {isLoggedIn & userName ? (
+      {!isLoggedIn ? (
         <div className="born_today_container">
           <div className="born_today_title"></div>
           <div className="born_today_sub_title"></div>
@@ -28,7 +33,7 @@ export default function App() {
           </div>
         </div>
       ) : (
-        <LogIn />
+        <LogIn SetIsLoggedIn={SetIsLoggedIn} />
       )}
     </div>
   );

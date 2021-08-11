@@ -5,6 +5,7 @@
   align-items: center;
   flex-grow: 3;
   position: relative;
+  z-index: 3;
 }
 .select_search {
   margin: 0;

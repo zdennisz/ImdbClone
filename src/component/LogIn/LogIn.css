@@ -3,14 +3,18 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 50vh;
+  background-color: white;
+  width: 70vw;
 }
 .left_col {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width:50%;
+ height: 100%;
 }
 .right_col {
   flex-grow: 1;
@@ -18,4 +22,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width:50%;
+  margin-top:54px;
+}
+.sign_in_text{
+  color:black;
+  font-size:x-large;
+}
+hr{
+  width: 95px;
+}
+.or_segment{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width:300px;
+}
+.or_text{
+  color: black;
+}
+.create_account_btn{
+  background-color: #e4b721;
 }

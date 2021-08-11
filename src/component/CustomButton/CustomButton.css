@@ -1,0 +1,15 @@
+.btn_title{
+    color:black;
+    font-size:larger;
+}
+.btn_container{
+    width: 250px;
+    height: 48px;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}

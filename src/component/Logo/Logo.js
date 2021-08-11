@@ -1,9 +1,12 @@
-import React, { memo } from "react";
+import React from "react";
 
 import "./Logo.css";
 
 const Logo = (props) => {
-  return <div className="title_text">{props.title}</div>;
+  const clickHandler = () => {
+    props.handler()
+  }
+  return <div onClick={clickHandler} className="title_text">{props.title}</div>;
 };
 
-export default memo(Logo);
+export default Logo;
