@@ -3,9 +3,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 70vh;
   background-color: white;
   width: 70vw;
+  padding: 24px;
 }
 .left_col {
   flex-grow: 1;
@@ -13,21 +14,30 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width:50%;
+  width:45%;
  height: 100%;
 }
 .right_col {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width:50%;
-  margin-top:54px;
+  width:45%;
+  height: 350px;
+}
+
+.mid_col{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width:10%;
 }
 .sign_in_text{
   color:black;
-  font-size:x-large;
+  font-size:xx-large;
 }
 hr{
   width: 95px;
@@ -41,7 +51,21 @@ hr{
 }
 .or_text{
   color: black;
+  font-size: x-large;
 }
 .create_account_btn{
-  background-color: #e4b721;
+  background-color: #fcba03;
+  border-width: 0;
+  font-weight: bold;
+}
+.vl{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dddddd;
+  height: 350px;
+  
+}
+
+p{
+  line-height: 36px;
 }

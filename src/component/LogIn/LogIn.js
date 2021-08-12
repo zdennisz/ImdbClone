@@ -25,14 +25,13 @@ const LogIn = (props) => {
         </div>
         <CustomButton btnTitle="Create a New Account" btnStyle="create_account_btn" handler={mockSignInHandler} />
       </div>
+      <div className="mid_col">
+        <div className="vl" />
+      </div>
       <div className="right_col">
+
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus
-          dolor, finibus ac imperdiet at, ullamcorper sed neque. Nam aliquam,
-          velit eget hendrerit imperdiet, nibh orci ornare tortor, sodales
-          rhoncus nisi elit sit amet eros. Sed lacinia nulla eleifend metus
-          scelerisque, at sagittis eros tincidunt. Ut ante sapien, ornare vel
-          arcu commodo
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra dictum ex, sed laoreet nibh ornare mattis. Suspendisse ac massa at ligula mattis ornare. Sed iaculis a quam non maximus. Fusce varius suscipit sagittis. Maecenas hendrerit ipsum vel risus dapibus lobortis. Donec scelerisque felis quis neque convallis consequat in nec augue. In eu lorem dolor. Nullam sagittis velit vitae elementum congue. Quisque sed nulla vel orci sollicitudin varius. Praesent in faucibus mi. Aenean quis libero ac dui tincidunt dignissim quis vitae mi. Nulla felis arcu, luctus rutrum feugiat eget, condimentum suscipit neque. Suspendisse malesuada ac nunc non laoreet. Ut sed mi velit. Pellentesque pretium dictum eros ac aliquam.
         </p>
       </div>
     </div>
