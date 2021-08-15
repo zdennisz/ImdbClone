@@ -13,10 +13,7 @@ const LogIn = (props) => {
   }
   const googleSignInHandler = () => {
     const provider = new firebase.auth.GoogleAuthProvider()
-
-
     firebase.auth().signInWithPopup(provider).then((result) => {
-
       const userData = result.additionalUserInfo.profile
       const user = {
         email: userData.email,
@@ -24,7 +21,7 @@ const LogIn = (props) => {
         firstName: userData.given_name,
         pic: userData.picture
       }
-      console.log(user)
+
       props.SetUserName(user)
       props.SetisMainPage(true)
 
@@ -37,7 +34,15 @@ const LogIn = (props) => {
   const facebookSignInHandler = () => {
     const provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then((res) => {
-      console.log(res)
+      const userData = res.additionalUserInfo.profile
+      const user = {
+        email: userData.email,
+        lastName: userData.last_name,
+        firstName: userData.first_name,
+        pic: userData.picture.data.url
+      }
+      props.SetUserName(user)
+      props.SetisMainPage(true)
     }).catch((err) => {
       console.log(err)
     })
