@@ -90,3 +90,21 @@ p{
   justify-content: center;
   align-items: center;
 }
+
+.imdb_logo_color{
+  color:#f5c518;
+  background-color: black;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.face_logo_color{
+  color:#0f90f2;
+}
+.amazon_logo_color{
+  color:white;
+  background-color: black;
+  border-radius: 5px;
+}
