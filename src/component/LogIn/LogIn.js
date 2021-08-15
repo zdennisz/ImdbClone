@@ -13,7 +13,7 @@ const LogIn = (props) => {
   }
   const googleSignInHandler = () => {
     const provider = new firebase.auth.GoogleAuthProvider()
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
 
     firebase.auth().signInWithPopup(provider).then((result) => {
 
@@ -24,6 +24,7 @@ const LogIn = (props) => {
         firstName: userData.given_name,
         pic: userData.picture
       }
+      console.log(user)
       props.SetUserName(user)
       props.SetisMainPage(true)
 
