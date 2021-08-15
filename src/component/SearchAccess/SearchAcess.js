@@ -5,8 +5,8 @@ const SearchAccess = (value, serachCriteria) => {
         method: "GET",
         headers: {
           "x-rapidapi-key":
-            "4aac4def2fmshb56ec21bf755504p13678bjsnff697b2ca53b",
-          "x-rapidapi-host": "imdb8.p.rapidapi.com"
+            process.env.REACT_APP_RA_KEY,
+          "x-rapidapi-host": process.env.REACT_APP_RA_HOST
         }
       }).then((data) => data.json());
     default:
@@ -14,8 +14,8 @@ const SearchAccess = (value, serachCriteria) => {
         method: "GET",
         headers: {
           "x-rapidapi-key":
-            "4aac4def2fmshb56ec21bf755504p13678bjsnff697b2ca53b",
-          "x-rapidapi-host": "imdb8.p.rapidapi.com"
+            process.env.REACT_APP_RA_KEY,
+          "x-rapidapi-host": process.env.REACT_APP_RA_HOST
         }
       }).then((data) => data.json());
   }
