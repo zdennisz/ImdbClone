@@ -34,6 +34,15 @@ const LogIn = (props) => {
 
   }
 
+  const facebookSignInHandler = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider).then((res) => {
+      console.log(res)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
   return (
     <div className="login_content_container">
       <div className="login_container">
@@ -41,7 +50,7 @@ const LogIn = (props) => {
           <label className="sign_in_text">Sign in</label>
           <CustomButton btnTitle="Sign in with IMDb" iconSource="fab fa-imdb fa-2x imdb_logo_color" handler={mockSignInHandler} />
           <CustomButton btnTitle="Sign in with Amazon" iconSource="fab fa-amazon fa-2x amazon_logo_color" handler={mockSignInHandler} />
-          <CustomButton btnTitle="Sign in with Facebook" iconSource="fab fa-facebook fa-2x face_logo_color" handler={mockSignInHandler} />
+          <CustomButton btnTitle="Sign in with Facebook" iconSource="fab fa-facebook fa-2x face_logo_color" handler={facebookSignInHandler} />
           <CustomButton btnTitle="Sign in with Google" iconSource="fab fa-google fa-2x" handler={googleSignInHandler} />
           <CustomButton btnTitle="Sign in with Apple" iconSource="fab fa-apple fa-2x" handler={mockSignInHandler} />
           <div className="or_segment">
