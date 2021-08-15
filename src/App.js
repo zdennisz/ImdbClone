@@ -5,14 +5,16 @@ import SignIn from "./component/SignIn/SignIn";
 import Logo from "./component/Logo/Logo";
 import LogIn from "./component/LogIn/LogIn";
 export default function App() {
-  const [isLoggedIn, SetIsLoggedIn] = useState(false);
+  const [isMainPage, SetisMainPage] = useState(true);
   const [userName, SetUserName] = useState();
 
   const signInHandler = () => {
-    SetIsLoggedIn(true)
+
+    return userName ? SetisMainPage(true) : SetisMainPage(false)
+
   };
   const returnToMainHandler = () => {
-    SetIsLoggedIn(false)
+    SetisMainPage(true)
   }
 
   return (
@@ -21,9 +23,9 @@ export default function App() {
         <Logo title="IMDb" handler={returnToMainHandler} />
         <SearchBar />
         <div className="vertical_line"></div>
-        <SignIn signInHandler={signInHandler} userName={userName} />
+        <SignIn signInHandler={signInHandler} userName={userName ? userName.firstName : ""} />
       </div>
-      {!isLoggedIn ? (
+      {isMainPage ? (
         <div className="born_today_container">
           <div className="born_today_title"></div>
           <div className="born_today_sub_title"></div>
@@ -33,7 +35,7 @@ export default function App() {
           </div>
         </div>
       ) : (
-        <LogIn SetIsLoggedIn={SetIsLoggedIn} />
+        <LogIn SetisMainPage={SetisMainPage} SetUserName={SetUserName} />
       )}
     </div>
   );

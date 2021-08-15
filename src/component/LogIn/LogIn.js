@@ -1,15 +1,36 @@
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import SocialMediaBar from "../SocialMediaBar/SocialMediaBar";
+import firebase from "../Firebase/Firebase"
+import MediaButtonsData from "../../constants/MediaBarButtons"
 import "./LogIn.css";
 
 const LogIn = (props) => {
-  const { SetIsLoggedIn } = props
-  const data = [{ link: "https://facebook.com/imdb", iconStyle: "fab fa-facebook fa-2x" }, { link: "https://instagram.com/imdb", iconStyle: "fab fa-instagram fa-2x" }, { link: "https://twitch.tv/imdb", iconStyle: "fab fa-twitch fa-2x" }, { link: "https://twitter.com/imdb", iconStyle: "fab fa-twitter fa-2x" }, { link: "https://youtube.com/imdb", iconStyle: "fab fa-youtube fa-2x" }]
 
 
   const mockSignInHandler = () => {
-    props.SetIsLoggedIn(true)
+    props.SetisMainPage(true)
+  }
+  const googleSignInHandler = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
+    firebase.auth().signInWithPopup(provider).then((result) => {
+
+      const userData = result.additionalUserInfo.profile
+      const user = {
+        email: userData.email,
+        lastName: userData.family_name,
+        firstName: userData.given_name,
+        pic: userData.picture
+      }
+      props.SetUserName(user)
+      props.SetisMainPage(true)
+
+    }).catch((error) => {
+      console.log(error)
+    })
+
   }
 
   return (
@@ -20,7 +41,7 @@ const LogIn = (props) => {
           <CustomButton btnTitle="Sign in with IMDb" iconSource="fab fa-imdb fa-2x" handler={mockSignInHandler} />
           <CustomButton btnTitle="Sign in with Amazon" iconSource="fab fa-amazon fa-2x" handler={mockSignInHandler} />
           <CustomButton btnTitle="Sign in with Facebook" iconSource="fab fa-facebook fa-2x" handler={mockSignInHandler} />
-          <CustomButton btnTitle="Sign in with Google" iconSource="fab fa-google fa-2x" handler={mockSignInHandler} />
+          <CustomButton btnTitle="Sign in with Google" iconSource="fab fa-google fa-2x" handler={googleSignInHandler} />
           <CustomButton btnTitle="Sign in with Apple" iconSource="fab fa-apple fa-2x" handler={mockSignInHandler} />
           <div className="or_segment">
             <hr></hr><label className="or_text">or</label><hr></hr>
@@ -39,7 +60,7 @@ const LogIn = (props) => {
         </div>
       </div>
       <div className="login_footer">
-        <SocialMediaBar data={data} />
+        <SocialMediaBar data={MediaButtonsData} />
       </div>
     </div>
   );
