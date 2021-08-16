@@ -5,6 +5,8 @@ import MediaButtonsData from "../../constants/MediaBarButtons"
 import "./LogIn.css";
 import SignInState from "../../constants/SignInState";
 import LogInPageContent from "../LogInPageContent/LogInPageContent";
+import CreateAccount from "../CreateAccount/CreateAccount";
+import LogInImdb from "../LogInImdb/LogInImdb"
 
 const LogIn = (props) => {
   const [pageContent, SetPageContent] = useState(SignInState.LOGIN)
@@ -22,7 +24,7 @@ const LogIn = (props) => {
         firstName: userData.given_name,
         pic: userData.picture
       }
-
+      localStorage.setItem("userInfo", JSON.stringify(user))
       props.SetUserName(user)
       props.SetisMainPage(true)
 
@@ -42,6 +44,7 @@ const LogIn = (props) => {
         firstName: userData.first_name,
         pic: userData.picture.data.url
       }
+      localStorage.setItem("userInfo", JSON.stringify(user))
       props.SetUserName(user)
       props.SetisMainPage(true)
     }).catch((err) => {
@@ -55,10 +58,10 @@ const LogIn = (props) => {
       Content = <LogInPageContent facebookSignInHandler={facebookSignInHandler} googleSignInHandler={googleSignInHandler} SetPageContent={SetPageContent} />
       break;
     case SignInState.CREATEACCOUNT:
-      Content = <div>Create Account</div>
+      Content = <CreateAccount />
       break;
     case SignInState.SIGNIN:
-      Content = <div>Sign in with IMDb</div>
+      Content = <LogInImdb />
       break;
 
   }

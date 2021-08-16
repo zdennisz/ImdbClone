@@ -1,6 +1,6 @@
 import React from 'react'
-import "./LogInPageContent.css"
 import CustomButton from "../CustomButton/CustomButton";
+import "./LogInPageContent.css"
 const LogInPageContent = (props) => {
     const faceSignInHandler = () => {
         props.facebookSignInHandler()
