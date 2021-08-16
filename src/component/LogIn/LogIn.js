@@ -54,10 +54,8 @@ const LogIn = (props) => {
         <div className="left_col">
           <label className="sign_in_text">Sign in</label>
           <CustomButton btnTitle="Sign in with IMDb" iconSource="fab fa-imdb fa-2x imdb_logo_color" handler={mockSignInHandler} />
-          <CustomButton btnTitle="Sign in with Amazon" iconSource="fab fa-amazon fa-2x amazon_logo_color" handler={mockSignInHandler} />
           <CustomButton btnTitle="Sign in with Facebook" iconSource="fab fa-facebook fa-2x face_logo_color" handler={facebookSignInHandler} />
           <CustomButton btnTitle="Sign in with Google" iconSource="fab fa-google fa-2x" handler={googleSignInHandler} />
-          <CustomButton btnTitle="Sign in with Apple" iconSource="fab fa-apple fa-2x" handler={mockSignInHandler} />
           <div className="or_segment">
             <hr></hr><label className="or_text">or</label><hr></hr>
 

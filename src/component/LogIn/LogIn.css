@@ -98,7 +98,8 @@ p{
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  width: 26px;
+  height: 26px;
 }
 .face_logo_color{
   color:#0f90f2;
