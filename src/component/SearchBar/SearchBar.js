@@ -2,13 +2,23 @@ import "./SearchBar.css";
 import React, { useState, useEffect } from "react";
 import SearchAccess from "../SearchAccess/SearchAcess";
 import VideoList from "../VideoList/VideoList";
+import Loader from "../Loader/Loader"
 const SearchBar = (props) => {
   let resultList;
   const [input, setInput] = useState("");
   const [btnStyle, setBtnStyle] = useState("btn btn_submit");
   const [serachCriteria, setSearchCriteria] = useState("actors");
-  const [popUpState, SetPopUpState] = useState(true);
+  const [popUpState, SetPopUpState] = useState(false);
   const [data, setData] = useState();
+  const [isLoading, SetIsLoading] = useState(false)
+
+  let searchResultContainerStyle = "search_results_container "
+
+  if (popUpState) {
+    searchResultContainerStyle += "search_results_container_open"
+  } else {
+    searchResultContainerStyle += "search_results_container_closed"
+  }
 
   const inputHandler = (event) => {
     setInput(event.target.value);
@@ -41,12 +51,14 @@ const SearchBar = (props) => {
 
   const btnClickHandler = () => {
     setBtnStyle("btn btn_submit_click");
+    SetIsLoading(true)
     const getData = async () => {
       try {
         const res = await SearchAccess(input.toString(), "auto-complete");
         setBtnStyle("btn btn_submit");
         setData(res.d);
         openSearchbar();
+        SetIsLoading(false)
       } catch (err) {
         console.log(err);
       }
@@ -69,7 +81,8 @@ const SearchBar = (props) => {
   }, []);
   return (
     <div className="search_container">
-      <div className="search_results_container">
+      <div className={searchResultContainerStyle}  >
+        {isLoading ? <Loader /> : null}
         {popUpState ? resultList : null}
       </div>
       <div className="select_search">

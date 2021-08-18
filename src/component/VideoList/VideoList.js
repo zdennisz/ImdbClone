@@ -18,7 +18,7 @@ const VideoList = (props) => {
     return <VideoItem key={index} data={item} index={index} />;
   });
 
-  return <ul>{itemList}</ul>;
+  return <ul className="video_list">{itemList}</ul>;
 };
 
 export default VideoList;
