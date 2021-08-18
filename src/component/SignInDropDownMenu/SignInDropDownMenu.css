@@ -1,0 +1,27 @@
+.drop_down_container{
+    position: absolute;
+    background-color: white;
+    z-index: 5;
+    display: none;
+}
+
+.drop_down_text{
+    color: black;
+    line-height: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+.drop_down{
+    position: relative;
+    display: inline-block;
+}
+.drop_down:hover .drop_down_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    width: 101px;
+    border-radius: 2px;
+}

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import SignInDropDownMenu from "../SignInDropDownMenu/SignInDropDownMenu";
 import "./SignIn.css";
 const SignIn = (props) => {
   const { userName } = props;
@@ -9,7 +10,7 @@ const SignIn = (props) => {
 
   return (
     <button className="sign_in_btn" onClick={signInHandler}>
-      {userName ? `Hello ${userName}` : "Sign in"}
+      {userName ? <SignInDropDownMenu userName={userName} /> : "Sign in"}
     </button>
   );
 };
