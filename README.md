@@ -1,4 +1,4 @@
-# Imdb Clone
+# :movie_camera: Imdb Clone
 
 Developed a IMDb clone website, written in `React.js`, which allows searching movies via `Rapid API`.
 
